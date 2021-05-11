@@ -1,0 +1,60 @@
+<div class="login-wrapper">
+    <div class="card">
+        <div class="card-body">
+      
+              
+                <h1 class="h3 mb-3 fw-normal">{{currentActivity.name}}</h1>
+
+                <div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" value="Active" name="state" id="activeRadio"
+                         placeholder="state" required autofocus [(ngModel)]="currentActivity.state">
+                         <label class="form-check-label" for="activeRadio">Active</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio"  value="Desactif" name="state" id="desactiveRadio"
+                         placeholder="state" required autofocus [(ngModel)]="currentActivity.state">
+                         <label class="form-check-label" for="desactiveRadio">Desactif</label>
+                        
+                      </div>
+                </div>
+                
+                <div class="form-floating div-input">
+                  <label for="nameState" class="sr-only">name</label>
+                  <input type="input" name="nameState" class="form-control" id="nameState" 
+                  placeholder="name" required autofocus [(ngModel)]="currentActivity.name">
+                  
+                </div>
+                <div class="form-floating div-input">
+                    <label for="location" class="sr-only">location</label>
+                    <input type="input" name="location" class="form-control" id="location" 
+                    placeholder="location" required autofocus [(ngModel)]="currentActivity.location">
+                    
+                  </div>
+                  <div class="form-floating div-input">
+                    <label for="MachineId" class="sr-only">MachineId</label>
+                    <input type="input" name="MachineId" class="form-control" id="MachineId" 
+                    placeholder="MachineId" required autofocus [(ngModel)]="currentActivity.id">
+                  </div>
+            
+            
+                <div class="row">
+                    
+                    <div class="col-sm-3">
+                        <button class="w-100 btn btn-lg btn-primary btn-active" (click)="changerEtat()">Active/Desactiver</button>
+                    </div>
+                    
+                        
+              </div>
+                <div class="row">
+                    <div >
+                        <button class="w-100 btn btn-lg btn-primary btn-retour" (click)="changePage()">retour</button>
+                      </div>
+                  </div>
+                  
+              
+             
+        </div>
+        </div>
+           
+</div>

@@ -1,0 +1,39 @@
+<main role="main" class="container">
+    <div class="jumbotron">
+        <h1>Dashboard</h1>
+        <div class="row">
+            <div class="col-sm-2">
+                
+            </div>
+            <div class="col-sm-5">
+                <p>{{today}}</p> 
+            </div>
+            <div class="col-sm-2">
+                
+            </div>
+            
+        </div>
+        <table mat-table [dataSource]="activityList">
+            <ng-container matColumnDef="activityName">
+                <th mat-header-cell *matHeaderCellDef> Nom </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="activityState">
+                <th mat-header-cell *matHeaderCellDef> Etat </th>
+                <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef> Action </th>
+                <td mat-cell *matCellDef="let element"> 
+                    <button mat-raised-button class="action-btn" color="primary" (click) = "changerEtat(element)" >Activer/Desactiver</button>
+                    <button mat-raised-button color="primary" (click) = "afficherDetails(element)" >Afficher details</button>
+                </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        
+    </div>
+</main>
